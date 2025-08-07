@@ -441,8 +441,9 @@ def revisar_nuevas_releases():
     if nuevos:
         lineas = [f"{clave.upper()}: {nombre}" for clave, nombre in nuevos]
         mensaje = "\n".join(lineas)
+        tex = textos["titulo_notificacion"][idioma_actual]
         toast.show_toast(
-            "¡Nuevas versiones disponibles!",
+            tex,
             mensaje,
             icon_path="hm64.ico",
             duration=10,
@@ -1323,5 +1324,6 @@ while True:
 
     pygame.display.flip()
     clock.tick(FPS)
+
 
 
